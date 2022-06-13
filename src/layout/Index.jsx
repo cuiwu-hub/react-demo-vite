@@ -35,7 +35,11 @@ const App = (props) => {
       {/* collapsedk控制菜单栏的展示和收起 */}
       <Sider theme='light' collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <h3 className='sider-title'>前端知识大纲</h3>
-        <Menu defaultSelectedKeys={['1']} mode="inline" items={items} onClick={(item) => navigate(item.key)}/>
+        <Menu 
+          defaultSelectedKeys={items[0].key} 
+          mode="inline" 
+          items={items} 
+          onClick={(item) => navigate(item.key)}/>
       </Sider>
       <Layout className="site-layout">
         <Content style={{margin: '10px'}}>
