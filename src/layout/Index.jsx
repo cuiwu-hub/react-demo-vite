@@ -19,7 +19,10 @@ const items = [
   getItem('JS', 'sub1', <CodeSandboxOutlined />),
   getItem('Vue', 'sub2', <CodeSandboxOutlined />),
   getItem('React', '3', <CodeSandboxOutlined />),
-  getItem('Webpack', '4', <CodeSandboxOutlined />)
+  getItem('Webpack', '4', <CodeSandboxOutlined />),
+  getItem('数据结构', '5', <CodeSandboxOutlined />),
+  getItem('计算机网络', '6', <CodeSandboxOutlined />),
+  getItem('算法', '7', <CodeSandboxOutlined />)
 ];
 
 const App = (props) => {
