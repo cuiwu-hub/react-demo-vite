@@ -1,6 +1,7 @@
 import { CodeSandboxOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 import './index.css'
 const { Content, Sider } = Layout;
 
@@ -9,13 +10,15 @@ function getItem(label, key, icon, children) {
     key,
     icon,
     children,
-    label,
+    label
   };
 }
+// const routerPath = [
 
+// ]
 const items = [
-  getItem('HTML', '1', <CodeSandboxOutlined />),
-  getItem('CSS', '2', <CodeSandboxOutlined />),
+  getItem('HTML', 'html', <CodeSandboxOutlined />),
+  getItem('CSS', 'css', <CodeSandboxOutlined />),
   getItem('JS', 'sub1', <CodeSandboxOutlined />),
   getItem('Vue', 'sub2', <CodeSandboxOutlined />),
   getItem('React', '3', <CodeSandboxOutlined />),
@@ -27,13 +30,18 @@ const items = [
 
 const App = (props) => {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate()
   return (
     <Layout
       style={{minHeight: '100vh'}}>
       {/* collapsedk控制菜单栏的展示和收起 */}
       <Sider theme='light' collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
         <h3 className='sider-title'>前端知识大纲</h3>
-        <Menu defaultSelectedKeys={['1']} mode="inline" items={items}/>
+        <Menu 
+          defaultSelectedKeys={[items[0].key]}
+          mode="inline" 
+          items={items} 
+          onClick={(item) => navigate(item.key)}/>
       </Sider>
       <Layout className="site-layout">
         <Content style={{margin: '10px'}}>
