@@ -16,7 +16,8 @@ function getItem(label, key, icon, children) {
 
 const items = [
   getItem('HTML', 'html', <CodeSandboxOutlined />, [
-    getItem('标签详解', 'html/tag', <QuestionCircleOutlined />)
+    getItem('HTML语义化', 'html/tag', <QuestionCircleOutlined />),
+    getItem('HTML5新特性', 'html/newtx', <QuestionCircleOutlined />)
   ]),
   getItem('CSS', 'css', <CodeSandboxOutlined />, [
     getItem('测试', 'css/test', <QuestionCircleOutlined />)
@@ -43,7 +44,7 @@ const App = (props) => {
       style={{minHeight: '100vh'}}>
       {/* collapsedk控制菜单栏的展示和收起 */}
       <Sider theme='light'>
-        <h3 className='sider-title'>前端知识大纲</h3>
+        <h3 className='sider-title'>前端面经总结</h3>
         <Menu
           openKeys={[...openKeys]}
           onOpenChange={(item) => {

@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from '../layout/Index.jsx'
-import Index from '../views/Index/Index'
-import CssPart from "../views/CssPart/CssPart.jsx";
-import Jscript from '../views/Jscript/Jscript.jsx'
-import Tag from "../views/Tag/Tag.jsx";
-import Test from '../views/Test/Test.jsx'
+import Index from '../views/html/Index/Index'
+import CssPart from "../views/css/CssPart/CssPart.jsx";
+import Jscript from '../views/js/Jscript/Jscript.jsx'
+import Tag from "../views/html/Tag/Tag.jsx";
+import Test from '../views/css/Test/Test.jsx'
 export default function Router() {
   return (
     <BrowserRouter>
