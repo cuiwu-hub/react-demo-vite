@@ -1,6 +1,6 @@
 import { CodeSandboxOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css'
 import { useNavigate } from 'react-router-dom';
 const { Content, Sider } = Layout;
@@ -17,29 +17,35 @@ function getItem(label, key, icon, children) {
 const items = [
   getItem('HTML', 'html', <CodeSandboxOutlined />),
   getItem('CSS', 'css', <CodeSandboxOutlined />),
-  getItem('JS', 'sub1', <CodeSandboxOutlined />),
-  getItem('Vue', 'sub2', <CodeSandboxOutlined />),
-  getItem('React', '3', <CodeSandboxOutlined />),
-  getItem('Webpack', '4', <CodeSandboxOutlined />),
-  getItem('数据结构', '5', <CodeSandboxOutlined />),
-  getItem('计算机网络', '6', <CodeSandboxOutlined />),
-  getItem('算法', '7', <CodeSandboxOutlined />)
+  getItem('JS', 'js', <CodeSandboxOutlined />),
+  getItem('Vue', 'vue', <CodeSandboxOutlined />),
+  getItem('React', 'react', <CodeSandboxOutlined />),
+  getItem('Webpack', 'webpack', <CodeSandboxOutlined />),
+  getItem('数据结构', 'datajg', <CodeSandboxOutlined />),
+  getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />),
+  getItem('算法', 'algorithm', <CodeSandboxOutlined />)
 ];
 
 const App = (props) => {
-  const [collapsed, setCollapsed] = useState(false);
   const navigate = useNavigate()
+  const [path, setPath] = useState([])
+  useEffect(() => {
+    setPath([window.location.pathname.slice(1)])
+  }, [])
   return (
     <Layout
       style={{minHeight: '100vh'}}>
       {/* collapsedk控制菜单栏的展示和收起 */}
-      <Sider theme='light' collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+      <Sider theme='light'>
         <h3 className='sider-title'>前端知识大纲</h3>
-        <Menu 
-          defaultSelectedKeys={items[0].key} 
+        <Menu
+          selectedKeys={[...path]}
           mode="inline" 
           items={items} 
-          onClick={(item) => navigate(item.key)}/>
+          onClick={(item) => {
+            navigate(item.key)
+            setPath([item.key])
+          }}/>
       </Sider>
       <Layout className="site-layout">
         <Content style={{margin: '10px'}}>

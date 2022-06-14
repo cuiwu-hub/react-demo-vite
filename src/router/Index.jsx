@@ -7,7 +7,7 @@ export default function Router() {
     <BrowserRouter>
       <App>
         <Routes>
-          <Route path="/" element={<Navigate to='html'/>}></Route>
+          <Route path="" element={<Navigate to='html' replace/>}></Route>
           <Route path="html" element={<Index/>}></Route>
           <Route path="css" element={<CssPart/>}></Route>
         </Routes>
