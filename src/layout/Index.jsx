@@ -1,4 +1,4 @@
-import { CodeSandboxOutlined } from '@ant-design/icons';
+import { CodeSandboxOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import React, { useState, useEffect } from 'react';
 import './index.css'
@@ -16,9 +16,11 @@ function getItem(label, key, icon, children) {
 
 const items = [
   getItem('HTML', 'html', <CodeSandboxOutlined />, [
-    getItem('标签详解', 'html/tag', <CodeSandboxOutlined />)
+    getItem('标签详解', 'html/tag', <QuestionCircleOutlined />)
   ]),
-  getItem('CSS', 'css', <CodeSandboxOutlined />),
+  getItem('CSS', 'css', <CodeSandboxOutlined />, [
+    getItem('测试', 'css/test', <QuestionCircleOutlined />)
+  ]),
   getItem('JS', 'js', <CodeSandboxOutlined />),
   getItem('Vue', 'vue', <CodeSandboxOutlined />),
   getItem('React', 'react', <CodeSandboxOutlined />),
@@ -31,8 +33,10 @@ const items = [
 const App = (props) => {
   const navigate = useNavigate()
   const [path, setPath] = useState([])
+  const [openKeys, setOpenKeys] = useState([])
   useEffect(() => {
     setPath([window.location.pathname.slice(1)])
+    setOpenKeys([window.location.pathname.slice(1).split('/')[0]])
   }, [])
   return (
     <Layout
@@ -41,7 +45,10 @@ const App = (props) => {
       <Sider theme='light'>
         <h3 className='sider-title'>前端知识大纲</h3>
         <Menu
-          // openKeys={[...path]}
+          openKeys={[...openKeys]}
+          onOpenChange={(item) => {
+            setOpenKeys(item)
+          }}
           selectedKeys={[...path]}
           mode="inline" 
           items={items}
