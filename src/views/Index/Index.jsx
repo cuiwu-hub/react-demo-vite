@@ -1,7 +1,8 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-export default function Demo() {
+export default function Demo(props) {
   return (
-    <div>html part</div>
+    <div><Outlet/></div>
   )
 }

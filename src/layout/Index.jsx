@@ -15,7 +15,9 @@ function getItem(label, key, icon, children) {
 }
 
 const items = [
-  getItem('HTML', 'html', <CodeSandboxOutlined />),
+  getItem('HTML', 'html', <CodeSandboxOutlined />, [
+    getItem('标签详解', 'html/tag', <CodeSandboxOutlined />)
+  ]),
   getItem('CSS', 'css', <CodeSandboxOutlined />),
   getItem('JS', 'js', <CodeSandboxOutlined />),
   getItem('Vue', 'vue', <CodeSandboxOutlined />),
@@ -39,9 +41,10 @@ const App = (props) => {
       <Sider theme='light'>
         <h3 className='sider-title'>前端知识大纲</h3>
         <Menu
+          // openKeys={[...path]}
           selectedKeys={[...path]}
           mode="inline" 
-          items={items} 
+          items={items}
           onClick={(item) => {
             navigate(item.key)
             setPath([item.key])
