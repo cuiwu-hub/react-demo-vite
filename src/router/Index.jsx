@@ -10,6 +10,7 @@ import Xulun from '../views/datajg/Xulun/Index'
 import LineTable from '../views/datajg/LineTable/Index'
 import Algorithm from '../views/algorithm/Index/Index'
 import List from '../views/algorithm/List/Index'
+import Sort from '../views/algorithm/Sort/Index'
 export default function Router() {
   return (
     <BrowserRouter>
@@ -31,6 +32,7 @@ export default function Router() {
           </Route>
           <Route path="algorithm" element={<Algorithm/>}>
             <Route path="list" element={<List/>}></Route>
+            <Route path="sort" element={<Sort/>}></Route>
           </Route>
         </Routes>
       </App>

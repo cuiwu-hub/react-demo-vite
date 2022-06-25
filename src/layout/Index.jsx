@@ -31,7 +31,8 @@ const items = [
     getItem('线性表', 'datajg/lineTable', <QuestionCircleOutlined />)
   ]),
   getItem('算法', 'algorithm', <CodeSandboxOutlined />, [
-    getItem('链表', 'algorithm/list', <QuestionCircleOutlined />)
+    getItem('链表', 'algorithm/list', <QuestionCircleOutlined />),
+    getItem('排序算法', 'algorithm/sort', <QuestionCircleOutlined />)
   ]),
   getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />)
 ];
