@@ -3,3 +3,16 @@ body, h1,h2,h3,h4,h5,h6 {
   margin: 0;
   padding: 0;
 }
+.content-item {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px
+}
+.content-item h3 {
+  color: #1890ff;
+  margin-bottom: 10px;
+}
+.content-item p {
+  text-indent: 2em;
+}

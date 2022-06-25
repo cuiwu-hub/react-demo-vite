@@ -26,9 +26,14 @@ const items = [
   getItem('Vue', 'vue', <CodeSandboxOutlined />),
   getItem('React', 'react', <CodeSandboxOutlined />),
   getItem('Webpack', 'webpack', <CodeSandboxOutlined />),
-  getItem('数据结构', 'datajg', <CodeSandboxOutlined />),
-  getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />),
-  getItem('算法', 'algorithm', <CodeSandboxOutlined />)
+  getItem('数据结构', 'datajg', <CodeSandboxOutlined />, [
+    getItem('绪论', 'datajg/xulun', <QuestionCircleOutlined />),
+    getItem('线性表', 'datajg/lineTable', <QuestionCircleOutlined />)
+  ]),
+  getItem('算法', 'algorithm', <CodeSandboxOutlined />, [
+    getItem('链表', 'algorithm/list', <QuestionCircleOutlined />)
+  ]),
+  getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />)
 ];
 
 const App = (props) => {
@@ -43,8 +48,15 @@ const App = (props) => {
     <Layout
       style={{minHeight: '100vh'}}>
       {/* collapsedk控制菜单栏的展示和收起 */}
-      <Sider theme='light'>
-        <h3 className='sider-title'>前端面经总结</h3>
+      <Sider theme='light' style={{
+        overflow: 'auto',
+        height: '100vh',
+        position: 'fixed',
+        left: 0,
+        top: 0,
+        bottom: 0,
+      }}>
+        <h3 className='sider-title'>前端知识总结</h3>
         <Menu
           openKeys={[...openKeys]}
           onOpenChange={(item) => {
@@ -58,7 +70,9 @@ const App = (props) => {
             setPath([item.key])
           }}/>
       </Sider>
-      <Layout className="site-layout">
+      <Layout className="site-layout" style={{
+        marginLeft: 200,
+      }}>
         <Content style={{margin: '10px'}}>
           {props.children}
         </Content>
