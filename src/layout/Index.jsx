@@ -34,7 +34,13 @@ const items = [
     getItem('链表', 'algorithm/list', <QuestionCircleOutlined />),
     getItem('排序算法', 'algorithm/sort', <QuestionCircleOutlined />)
   ]),
-  getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />)
+  getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />),
+  getItem('设计模式', 'designModule', <CodeSandboxOutlined />, [
+    getItem('单例模式', 'designModule/singleTon', <QuestionCircleOutlined />),
+    getItem('观察者模式', 'designModule/observer', <QuestionCircleOutlined />),
+    getItem('发布订阅', 'designModule/pubSub', <QuestionCircleOutlined />),
+    getItem('策略模式', 'designModule/strategy', <QuestionCircleOutlined />),
+  ])
 ];
 
 const App = (props) => {

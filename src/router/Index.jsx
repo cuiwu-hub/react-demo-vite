@@ -11,6 +11,11 @@ import LineTable from '../views/datajg/LineTable/Index'
 import Algorithm from '../views/algorithm/Index/Index'
 import List from '../views/algorithm/List/Index'
 import Sort from '../views/algorithm/Sort/Index'
+import DesignModule from '../views/designModule/Index/Index'
+import SingleTon from '../views/designModule/SingleTon/Index'
+import Observer from '../views/designModule/Observer/Index'
+import Pubsub from '../views/designModule/Pubsub/Index'
+import Strategy from '../views/designModule/Strategy/Index'
 export default function Router() {
   return (
     <BrowserRouter>
@@ -33,6 +38,12 @@ export default function Router() {
           <Route path="algorithm" element={<Algorithm/>}>
             <Route path="list" element={<List/>}></Route>
             <Route path="sort" element={<Sort/>}></Route>
+          </Route>
+          <Route path="designModule" element={<DesignModule/>}>
+            <Route path="singleTon" element={<SingleTon/>}></Route>
+            <Route path="observer" element={<Observer/>}></Route>
+            <Route path="pubsub" element={<Pubsub/>}></Route>
+            <Route path="strategy" element={<Strategy/>}></Route>
           </Route>
         </Routes>
       </App>
