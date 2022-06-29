@@ -16,6 +16,8 @@ import SingleTon from '../views/designModule/SingleTon/Index'
 import Observer from '../views/designModule/Observer/Index'
 import Pubsub from '../views/designModule/Pubsub/Index'
 import Strategy from '../views/designModule/Strategy/Index'
+import Tree from '../views/algorithm/Tree/Index'
+import Dplan from '../views/algorithm/Dplan/Index'
 export default function Router() {
   return (
     <BrowserRouter>
@@ -38,6 +40,8 @@ export default function Router() {
           <Route path="algorithm" element={<Algorithm/>}>
             <Route path="list" element={<List/>}></Route>
             <Route path="sort" element={<Sort/>}></Route>
+            <Route path="tree" element={<Tree/>}></Route>
+            <Route path="dp" element={<Dplan/>}></Route>
           </Route>
           <Route path="designModule" element={<DesignModule/>}>
             <Route path="singleTon" element={<SingleTon/>}></Route>

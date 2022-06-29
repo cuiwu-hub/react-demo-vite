@@ -32,7 +32,9 @@ const items = [
   ]),
   getItem('算法', 'algorithm', <CodeSandboxOutlined />, [
     getItem('链表', 'algorithm/list', <QuestionCircleOutlined />),
-    getItem('排序算法', 'algorithm/sort', <QuestionCircleOutlined />)
+    getItem('排序算法', 'algorithm/sort', <QuestionCircleOutlined />),
+    getItem('二叉树', 'algorithm/tree', <QuestionCircleOutlined />),
+    getItem('动态规划', 'algorithm/dp', <QuestionCircleOutlined />)
   ]),
   getItem('计算机网络', 'computerNet', <CodeSandboxOutlined />),
   getItem('设计模式', 'designModule', <CodeSandboxOutlined />, [
