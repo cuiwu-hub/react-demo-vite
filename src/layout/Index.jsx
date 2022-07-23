@@ -16,7 +16,7 @@ function getItem(label, key, icon, children) {
 
 const items = [
   getItem('HTML', 'html', <CodeSandboxOutlined />, [
-    getItem('HTML语义化', 'html/tag', <QuestionCircleOutlined />),
+    getItem('HTML语义化1', 'html/tag', <QuestionCircleOutlined />),
     getItem('HTML5新特性', 'html/newtx', <QuestionCircleOutlined />)
   ]),
   getItem('CSS', 'css', <CodeSandboxOutlined />, [
